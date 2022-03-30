@@ -24,7 +24,7 @@ fn typrint(text: &String, speed: &u32, random_speed: &bool, newline: &bool) {
         // for each chars
         if *random_speed {
             // if random speed is true
-            let random = rand::thread_rng().gen_range(20..*speed); // generate a random number between 20 and speed
+            let random = rand::thread_rng().gen_range(if *speed <= 20 { 0 } else {20}..*speed); // generate a random number between 20 and speed
             std::thread::sleep(std::time::Duration::from_millis(random as u64));
         // sleep for the random number of milliseconds
         } else {
