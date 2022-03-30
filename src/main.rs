@@ -90,8 +90,8 @@ fn main() {
                 args.remove(0);
                 args.remove(0);
             }
-            "--random-speed" | "-r" => {
-                random_speed = true;
+            "--no-random-speed" | "-r" => {
+                random_speed = false;
                 args.remove(0);
             }
             _ => {
@@ -173,8 +173,8 @@ fn main() {
                 MAGENTA, YELLOW, RESET
             );
             println!(
-                "\t{}--random-speed, -r: {}Sets the delay between each chars to a random value between 20 and speed{}",
-                MAGENTA, YELLOW, RESET
+                "\t{}--no-random-speed, -r: {}Disable random delay between each char from 20 to speed {}",
+                MAGENTA, YELLOW, RESET 
             );
 
             println!(
